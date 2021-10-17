@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -88,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -102,13 +109,45 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Shared\_LayoutBlog.cshtml" />
+    <Content Include="Views\CategoriaDeArtigo\Index.cshtml" />
+    <Content Include="Views\CategoriaDeArtigo\Create.cshtml" />
+    <Content Include="Views\CategoriaDeArtigo\Edit.cshtml" />
+    <Content Include="Views\CategoriaDeArtigo\Delete.cshtml" />
+    <Content Include="Views\CategoriaDeArtigo\IndexPagedList.cshtml" />
+    <Content Include="Views\Artigo\Create.cshtml" />
+    <Content Include="Views\Artigo\Delete.cshtml" />
+    <Content Include="Views\Artigo\Details.cshtml" />
+    <Content Include="Views\Artigo\Detalhes.cshtml" />
+    <Content Include="Views\Artigo\Edit.cshtml" />
+    <Content Include="Views\Artigo\Index.cshtml" />
+    <Content Include="Views\Artigo\_CategoriaDetalhes.cshtml" />
+    <Content Include="Views\Autores\Create.cshtml" />
+    <Content Include="Views\Autores\Delete.cshtml" />
+    <Content Include="Views\Autores\Details.cshtml" />
+    <Content Include="Views\Autores\Edit.cshtml" />
+    <Content Include="Views\Autores\Index.cshtml" />
+    <Content Include="Views\Shared\_Categorias.cshtml" />
+    <Content Include="Views\Shared\_LoginMenu.cshtml" />
+    <Content Include="Views\Shared\_ScriptAppInsights.cshtml" />
+    <Content Include="Views\Shared\_ScriptRollbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArtigoController.cs" />
+    <Compile Include="Controllers\AutoresController.cs" />
+    <Compile Include="Controllers\CategoriaDeArtigoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\Contexto\BlogPessoalContexto.cs" />
+    <Compile Include="Data\Mapeamento\ArtigoMap.cs" />
+    <Compile Include="Data\Mapeamento\AutorMap.cs" />
+    <Compile Include="Data\Mapeamento\CategoriaDeArtigoMap.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Artigo.cs" />
+    <Compile Include="Models\Autor.cs" />
+    <Compile Include="Models\CategoriaDeArtigo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -130,7 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
